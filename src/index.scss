@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-t from-gray-50 to-gray-100 h-screen;
+  }
+  .main {
+    @apply flex container max-w-[500px] mx-auto mt-20;
+  }
+  .todo-list {
+    @apply bg-white border border-gray-200 shadow-xl w-full rounded-xl overflow-hidden;
+    &__form {
+      @apply p-6;
+      &-title {
+        @apply font-semibold text-2xl w-full block mb-4;
+      }
+      &-input {
+        @apply appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md px-4 py-2 border-2 border-brand-color shadow-sm;
+        @apply focus:outline-none;
+      }
+      &-button {
+        @apply flex items-center rounded-md bg-brand-color border-2 text-white border-brand-color text-sm font-semibold pl-2 px-4 py-2 shadow-sm ml-4;
+      }
+      form {
+        @apply flex;
+      }
+    }
+    &__item {
+      @apply flex items-center py-4 px-6 border-b border-gray-100 transition-all;
+      @apply last:border-b-0;
+      @apply hover:bg-gray-100;
+      &-name {
+        @apply flex-1 mx-4 font-semibold;
+        &.--complated {
+          @apply line-through;
+        }
+      }
+      &-remove {
+        @apply mx-2 cursor-pointer;
+      }
+    }
+  }
+  .custom-checkbox {
+    @apply relative min-w-[24px];
+    input {
+      @apply absolute opacity-0;
+      &:checked {
+        + span {
+          &::after {
+            @apply opacity-100;
+          }
+        }
+      }
+    }
+    span {
+      @apply flex items-center justify-center rounded-[4px] w-6 h-6 border-2 border-brand-color relative;
+      &::after {
+        content: "";
+        @apply w-2 h-3 border-r-2 border-b-2 border-brand-color mb-1 opacity-0 transform rotate-45;
+      }
+    }
+  }
+}
