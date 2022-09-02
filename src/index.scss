@@ -63,3 +63,20 @@
     }
   }
 }
+
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: 100ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: 100ms ease-in;
+}
