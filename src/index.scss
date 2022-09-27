@@ -7,10 +7,10 @@
     @apply bg-gradient-to-t from-gray-50 to-gray-100 h-screen;
   }
   .main {
-    @apply flex container max-w-500 mx-auto mt-20;
+    @apply flex container max-w-500 mx-auto mt-4 md:mt-20 px-4;
   }
   .todo-list {
-    @apply bg-white border border-gray-200 shadow-xl w-full rounded-xl overflow-hidden;
+    @apply bg-white border border-gray-200 shadow-xl w-full transition-all rounded-xl overflow-hidden;
     &__form {
       @apply p-6;
       &-title {

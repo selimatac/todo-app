@@ -11,19 +11,20 @@ const App = () => {
   useEffect(() => {
     dispatch(getTodos());
   }, [dispatch]);
+
   return (
     <main className="main">
       <div className="todo-list">
         <TodoForm />
         <div ref={parent}>
-          {data ? (
+          {!data.loading ? (
             data.todos.map((item, i) => (
               <div key={i} classNames="item">
                 <TodoItem data={item} />
               </div>
             ))
           ) : (
-            <>Loading...</>
+            <h2 className="text-center font-bold mb-4">Loading...</h2>
           )}
         </div>
       </div>
